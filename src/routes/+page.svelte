@@ -92,7 +92,7 @@
         {/each}
     </ul>
 </div>
-<h3>Possible Words: {filteredWords.length}</h3>
+<h3>Possible Word: {filteredWords.length}</h3>
 <ul>
     {#each filteredWords as word}
         <li>{word}</li>
