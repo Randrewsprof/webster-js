@@ -1,4 +1,4 @@
-// $lib/wordlist.js
+import { base } from '$app/paths';
 
 let cachedWords = null;
 
@@ -10,7 +10,7 @@ let cachedWords = null;
  * 3. Fetch from an API
  */
 export async function loadWords() {
-    const response = await fetch('/words.txt');
+    const response = await fetch(`${base}/words.txt`);
     const text = await response.text();
 
     cachedWords = text
@@ -21,6 +21,7 @@ export async function loadWords() {
 
     return cachedWords;
 }
+
 /**
  * Filter words based on guess and colors
  * @param {string} guess - The guessed word (5 letters)
