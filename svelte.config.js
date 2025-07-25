@@ -10,8 +10,8 @@ export default {
 			strict: true
 		}),
 		paths: {
-			base: '/webster-js',
-			assets: '/webster-js'
+			base: '/webster-js'
+			// Remove the assets line - let SvelteKit handle it automatically
 		}
 	}
 };
