@@ -3,10 +3,15 @@ import adapter from '@sveltejs/adapter-static';
 export default {
 	kit: {
 		adapter: adapter({
-			fallback: 'index.html'
+			pages: 'build',
+			assets: 'build',
+			fallback: null,
+			precompress: false,
+			strict: true
 		}),
 		paths: {
-			base: '/webster-js'
+			base: '/webster-js',
+			assets: '/webster-js'
 		}
 	}
 };
