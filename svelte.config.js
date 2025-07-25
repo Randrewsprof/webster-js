@@ -1,10 +1,18 @@
 import adapter from '@sveltejs/adapter-static';
 
-export default {
+const config = {
   kit: {
-    adapter: adapter(),
+    adapter: adapter({
+      pages: 'build',
+      assets: 'build',
+      fallback: undefined,
+      precompress: false,
+      strict: true
+    }),
     paths: {
-      base: '/webster-js' // <-- Replace with your actual GitHub repo name
+      base: process.env.NODE_ENV === 'production' ? '/webster-js' : '',
     }
   }
 };
+
+export default config;
